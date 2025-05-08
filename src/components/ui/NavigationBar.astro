@@ -40,12 +40,25 @@ const savedNavActions = navActions.map((action) => ({
 		<nav aria-label="main navigation" role="navigation" class="header__nav">
 			<!-- Logo -->
 			<a href="/" class="header__logo">
-				<img src={logo.src} alt={logo.alt} width="48" height="48" />
-				<span>{logo.text}</span>
+				<img src={logo.src} alt={logo.alt} width="180" height="48" />
 			</a>
 
+			<!-- Navigation action buttons -->
+			<div class="header__actions">
+				{
+					savedNavActions.map((action) => (
+						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
+							{action.name}
+						</Button>
+					))
+				}
+			</div>
+
+			<!-- Theme Switcher -->
+			<Switcher />
+
 			<!-- Menu toggle -->
-			<button
+			<!-- <button
 				id="header-toggle"
 				class="header__toggle"
 				aria-expanded="false"
@@ -56,10 +69,10 @@ const savedNavActions = navActions.map((action) => ({
 					<span aria-hidden="true"></span>
 					<span aria-hidden="true"></span>
 				</div>
-			</button>
+			</button> -->
 
 			<!-- Navigation links -->
-			<ul role="menubar" aria-label="Select page" class="header__menu">
+			<!-- <ul role="menubar" aria-label="Select page" class="header__menu">
 				{
 					navItems.map((item) => (
 						<li role="none" class="header__menu-item">
@@ -98,21 +111,8 @@ const savedNavActions = navActions.map((action) => ({
 						</li>
 					))
 				}
-			</ul>
+			</ul> -->
 
-			<!-- Theme Switcher -->
-			<Switcher />
-
-			<!-- Navigation action buttons -->
-			<div class="header__actions">
-				{
-					savedNavActions.map((action) => (
-						<Button classes="flex-auto" size={action.size} style={action.style} modal="signup">
-							{action.name}
-						</Button>
-					))
-				}
-			</div>
 		</nav>
 	</div>
 </header>

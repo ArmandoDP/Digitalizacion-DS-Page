@@ -4,7 +4,7 @@
 export interface Logo {
 	src: string
 	alt: string
-	text: string
+	text?: string
 }
 
 export interface NavSubItem {
@@ -33,11 +33,12 @@ export interface NavData {
 
 export const navigationBarData: NavData = {
 	logo: {
-		src: '/logo.svg',
+		src: '/doc-logo.png',
 		alt: 'The tailwind astro theme',
-		text: 'Foxi.'
+		// text: 'Foxi.'
 	},
 	navItems: [
+	/*
 		{ name: 'Home', link: '/' },
 		{ name: 'Pricing', link: '/pricing' },
 		{ name: 'Features', link: '/features' },
@@ -52,6 +53,7 @@ export const navigationBarData: NavData = {
 			]
 		},
 		{ name: 'Contact', link: '/contact' }
+		*/
 	],
-	navActions: [{ name: 'Try it now', link: '/', style: 'primary', size: 'lg' }]
+	navActions: [{ name: '¡Contáctanos!', link: '/', style: 'secondary', size: 'lg' }]
 }

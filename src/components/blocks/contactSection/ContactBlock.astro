@@ -1,0 +1,33 @@
+---
+// Components
+// - Layout
+import Layout from '../../../layouts/Layout.astro'
+// - UI
+import FormHero from '../../../components/blocks/hero/ContactHero.astro'
+import CTA from '../../../components/blocks/CTA/BasicDark.astro'
+import ContactCards from '../../../components/blocks/contact/ContactCards.astro'
+import SocialProof from '../../../components/blocks/socialproof/Basic.astro'
+import Section from '../../ui/Section.astro'
+
+// Content
+// - SEO
+const SEO = {
+	title: 'Foxi | Get in Touch with Us',
+	description:
+		'Have questions or need assistance? Contact Foxi today for support, inquiries, or feedback. Our team is here to help you make the most of your Foxi experience.'
+}
+// - Page Header
+const header = {
+	title: 'Contáctanos y comienza a simplificar tu gestión documental',
+	text: "Ponte en contacto con nosotros para descubrir las posibilidades y encontrar la solución perfecta que se ajuste a las necesidades específicas de tu empresa."
+}
+---
+
+<Section id="guardaSection">
+    <FormHero
+        title={header.title}
+        text={header.text}
+        id="contact"
+        classes="bg-neutral-50 dark:bg-neutral-950/80"
+    />
+</Section>

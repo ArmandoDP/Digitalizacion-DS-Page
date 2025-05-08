@@ -13,6 +13,7 @@ import ChipNotification from '../../ui/ChipNotification.astro'
 import { Image } from 'astro:assets'
 import Button from '../../ui/Button.astro'
 import AvatarGroup from '../../ui/AvatarGroup.astro'
+import Carousel from '../../ui/Carousel.astro'
 
 // Content
 // - Hero Image
@@ -26,31 +27,42 @@ const avatars = [
 	{ image: { src: user2.src, alt: 'user name' }, link: '/' },
 	{ image: { src: user3.src, alt: 'user name' }, link: '/' }
 ]
+
+import bgShape from '../../../assets/shapesBG.svg'
+import icon1 from '../../../assets/headerIcons/eficienciaOperativa-1.png'
+import icon2 from '../../../assets/headerIcons/documentIcon.png'
+import icon3 from '../../../assets/headerIcons/scanerIcon-Wrapper.png'
+import icon4 from '../../../assets/headerIcons/reduccionCostos.png'
+import icon5 from '../../../assets/headerIcons/cumplimientoNormativo.png'
+import icon6 from '../../../assets/headerIcons/computer.png'
+import icon7 from '../../../assets/headerIcons/experiencia-usuario.png'
 ---
 
-<Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
+<Section id="intro" padding="top" bg={{ src: bgShape.src, width: 1920, height: 1080, format: 'svg'}} classes="bg-neutral-50 dark:bg-neutral-900">
 	<Row>
 		<Col span="2" />
 		<Col span="8" align="center">
-			<ChipNotification radius="rounded-full" classes="mb-6">
-				<strong>30K+</strong> satisfied customers
-				<AvatarGroup avatars={avatars} radius="rounded-full" slot="button" />
+			<ChipNotification radius="rounded-full" classes="mb-14">
+				<img src={icon1.src} alt="Eficiencia Operativa" class="h-16" />
+				<img src={icon2.src} alt="Documentacion" class="h-20" />
+				<img src={icon3.src} alt="Escaneo" class="h-20" />
+				<img src={icon4.src} alt="Reducción de Costos" class="h-16" />
 			</ChipNotification>
-			<h1>Enhance team <strong>performance</strong> with seamless integration</h1>
+			<h1><strong>Transforma tus procesos operativos:</strong></h1>
 
-			<p class="pb-0 text-lg">Work smarter, not harder, with our innovative platform</p>
-			<Button size="lg" link="/">Get started for free</Button>
+			<p class="pb-0 text-lg xl:text-4xl 2xl:text-5xl">soluciones híbridas para digitalización de documentos y gestión documental</p>
+			<Button size="xl" link="/">Recibe asesoría personalizada</Button>
+			<ChipNotification radius="rounded-full" classes="mt-14">
+				<img src={icon5.src} alt="Cumplimiento Normativo" class="h-16" />
+				<img src={icon6.src} alt="Computer" class="h-20" />
+				<img src={icon7.src} alt="Mejor experiencia de usuario" class="h-16" />
+			</ChipNotification>
+			<Carousel margin='12'/>
 		</Col>
 		<Col span="2" />
 		<Col span="2" />
 		<Col span="8">
-			<Image
-				src={heroImage}
-				alt="Foxi. The tailwind astro theme"
-				class="translate-y-8 shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
-				format="webp"
-			/></Col
-		>
+		</Col>
 		<Col span="2" />
 	</Row>
 </Section>

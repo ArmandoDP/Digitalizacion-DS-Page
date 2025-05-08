@@ -26,27 +26,30 @@ const {
 	bg,
 	bgPosition = 'center'
 } = Astro.props
+
+import mockupSoftware from '../../../assets/highlights/mockUps-software-doc.png'
+import bgShape from '../../../assets/circles-bg.png'
+import Button from '../../ui/Button.astro'
 ---
 
-<Section
-	id="testimonial"
-	mode="dark"
-	bg={bg}
-	bgPosition={bgPosition}
-	classes="dark:border-t border-y border-neutral-800"
->
+<Section id="testimonials" classes="bg-gradient-to-t from-gray-950 via-gray-800 to-gray-900">
 	<Row>
-		<Col span="12">
-			<Testimonial
-				blockquote={blockquote}
-				figcaption={figcaption}
-				cite={cite}
-				align="center"
-				size="4xl"
-				mobileSize="2xl"
-				classes="!leading-tight font-bold xl:text-5xl max-w-4xl mx-auto"
-				quoteSize={112}
-			/>
+		<Col span="7" align="left" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty text-white">Automatización de procesos y gestión
+				avanzada de documentos</h2>
+			<p class="pb-0 text-lg text-white/85">
+				Plataforma que digitaliza y automatiza procesos clave mientras gestiona documentos en un solo lugar. Desde la validación de identidad y firma electrónica hasta la consulta y gestión de archivos, agiliza trámites, mejora la experiencia del usuario y garantiza el cumplimiento normativo.
+			</p>
+			<Button style='third' size='lg'>Solicita una demo</Button>
+		</Col>
+	</Row>
+	<Row>
+		<Col span="12" classes="relative max-w-5xl mx-auto">
+			<div class="absolute inset-0 bg-[url('/src/assets/circles-bg.png')] bg-no-repeat bg-contain bg-center opacity-30 z-0"></div>
+			<div class="relative z-10">
+				<img src={mockupSoftware.src} alt="Digitalización de documentos" class="w-auto h-auto mb-8" loading="lazy" />
+			</div>
 		</Col>
 	</Row>
 </Section>
+

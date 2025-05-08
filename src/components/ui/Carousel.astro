@@ -1,0 +1,107 @@
+---
+import att from "../../assets/logosCarousel/att.png"
+import bmw from "../../assets/logosCarousel/BMW.png"
+import carrier from "../../assets/logosCarousel/Carrier.png"
+import femsa from "../../assets/logosCarousel/FEMSA.png"
+import hospital from "../../assets/logosCarousel/Hospital-Angeles.png"
+import baxter from "../../assets/logosCarousel/Baxter.png"
+import intertek from "../../assets/logosCarousel/Intertek.png"
+import lv from "../../assets/logosCarousel/Louis-Vuitton.png"
+import motorola from "../../assets/logosCarousel/Motorola.png"
+import posadas from "../../assets/logosCarousel/POSADAS.png"
+import schenker from "../../assets/logosCarousel/Schenker.png"
+import tip from "../../assets/logosCarousel/Tip-Mexico.png"
+import uam from "../../assets/logosCarousel/UAM.png"
+import volvo from "../../assets/logosCarousel/volvo.png"
+import avaya from "../../assets/logosCarousel/avaya.png"
+
+
+const images = [
+    att.src,
+    bmw.src,
+    carrier.src,
+    femsa.src,
+    hospital.src,
+    baxter.src,
+    intertek.src,
+    lv.src,
+    motorola.src,
+    posadas.src,
+    schenker.src,
+    tip.src,
+    uam.src,
+    volvo.src,
+    avaya.src
+]
+---
+<div class="carousel">
+	<div class="carousel-track" id="carousel-track">
+		{images.map((src, index) => (
+			<img src={src} alt={`Slide ${index + 1}`} class="carousel-slide" />
+		))}
+	</div>
+</div>
+
+<script is:inline>
+	let currentIndex = 0;
+	const visibleSlides = 4;
+	const track = document.getElementById("carousel-track");
+	const totalSlides = track.children.length;
+
+	function updateSlide() {
+		const offset = currentIndex * (100 / visibleSlides);
+		track.style.transform = `translateX(-${offset}%)`;
+	}
+
+	function slide(direction) {
+		const maxIndex = Math.ceil(totalSlides / visibleSlides) - 1;
+		currentIndex = (currentIndex + direction + maxIndex + 1) % (maxIndex + 1);
+		updateSlide();
+	}
+
+	// Auto slide every 4 seconds
+	setInterval(() => {
+		slide(1);
+	}, 4000);
+</script>
+
+<style>
+	.carousel {
+		position: relative;
+		width: 60%;
+        margin: 0 auto;
+		overflow: hidden;
+        margin-top: 6%;
+	}
+
+	.carousel-track {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+		width: fit-content;
+	}
+
+	.carousel-slide {
+		width: 25%; /* 100% / 4 items */
+		object-fit: cover;
+	}
+
+	.carousel-button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		border: none;
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+		z-index: 10;
+	}
+
+	.carousel-button.prev {
+		left: 0.5rem;
+	}
+
+	.carousel-button.next {
+		right: 0.5rem;
+	}
+</style>

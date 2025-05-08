@@ -1,0 +1,91 @@
+---
+// Feature Cards grid Section
+// ------------
+// Description: A grid of cards with feature information in a 4 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+
+// Content
+// - Cards
+import feature01 from '../../../assets/cards/feature-01.svg'
+import feature02 from '../../../assets/cards/feature-02.svg'
+import feature03 from '../../../assets/cards/feature-03.svg'
+import feature04 from '../../../assets/cards/feature-04.svg'
+import feature05 from '../../../assets/cards/feature-05.svg'
+
+import probelmsWrapper from '../../../assets/highlights/problems-wrapper-1.png'
+import imgSection from '../../../assets/highlights/okidoki.jpg'
+
+//bullets
+import bullet01 from '../../../assets/highlights/bullet1.png'
+import bullet02 from '../../../assets/highlights/bullet2.png'
+import bullet03 from '../../../assets/highlights/bullet3.png'
+import bullet04 from '../../../assets/highlights/bullet4.png'
+import bullet05 from '../../../assets/highlights/bullet5.png'
+import bullet06 from '../../../assets/highlights/bullet6.png'
+import Button from '../../ui/Button.astro'
+---
+
+<Section id="guardaSection">
+	<!-- <Row>
+		<Col span="7" align="left" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty"><strong>Guarda y custodia documental</strong></h2>
+			<p class="pb-0 text-lg">
+				Custodia tus documentos con máxima seguridad y acceso rápido garantizado. Optimizamos el almacenamiento y organización de documentos digitales, asegurando accesibilidad inmediata, trazabilidad y cumplimiento normativo.
+			</p>
+			<Button size='lg'>Contacta con un asesor</Button>
+		</Col>
+	</Row> -->
+	<Row>
+		<!-- <Col span="12" classes="mb-12 max-w-6xl mx-auto">
+			<img src={digitalizacionDesktop.src} alt="Digitalización de documentos" class="w-auto h-auto mb-8" loading="lazy" />
+		</Col> -->
+        <Col span="4" classes="flex justify-center">
+			<img src={imgSection.src} alt="Problemas DocSolutions" class="w-full max-w-sm border-2 border-black rounded-3xl" loading="lazy" />
+		</Col>
+
+		<!-- Columna de contenido -->
+		<Col span="8" classes="flex flex-col gap-2">
+			<h2 class="text-pretty"><strong>Creamos soluciones a la medida para impulsar tu gestión documental</strong></h2>
+			<p class="pb-0 text-lg">
+				Comienza tu camino hacia una gestión documental más eficiente con nuestra consultoría personalizada. Nos enfocamos en entender las necesidades únicas de tu negocio para construir una colaboración sólida y efectiva.
+			</p>
+			<!-- Grid de pasos -->
+			<div class="grid grid-cols-2 gap-8">
+				{[bullet01, bullet02, bullet03, bullet04, bullet05, bullet06].map((bullet, index) => (
+				<div class="flex items-start gap-4">
+					<img src={bullet.src} alt={`Paso ${index + 1}`} class="w-10 h-10 rounded-full shrink-0" />
+					<div>
+						<h6 class="text-neutral-700 font-semibold mb-2">
+							{[
+								'Analizamos tu proyecto',
+								'Te entregamos una propuesta detallada',
+								'Planificamos y movilizamos',
+								'Te acompañamos en tu proyecto',
+								'Nuestro equipo especializado mantiene el servicio',
+								'Finalmente',
+							][index]}
+						</h6>
+						<p class="text-neutral-600 text-sm">
+							{[
+								'para diseñar una solución de gestión documental que se adapte perfectamente a tus operaciones.',
+								'y adaptada, utilizando metodologías y certificaciones actualizadas para asegurar claridad y efectividad.',
+								'nuestros recursos para implementar soluciones a tu medida y nuestro software de control documental con la más alta calidad.',
+								'para una transición suave, supervisando y ajustando el proceso para garantizar una operación óptima y sin interrupciones.',
+								'asegurando el control de documentos y el funcionamiento del software en cumplimiento de todos los acuerdos iniciales para tu satisfacción continua.',
+								'te entregamos resultados o iniciamos un servicio recurrente de gestión documental, cumpliendo todas tus expectativas y necesidades de negocio.',
+							][index]}
+						</p>
+					</div>
+				</div>
+				))}
+			</div>
+		</Col>
+	</Row>
+</Section>

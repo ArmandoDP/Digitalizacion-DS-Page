@@ -1,0 +1,55 @@
+---
+// Feature Cards grid Section
+// ------------
+// Description: A grid of cards with feature information in a 4 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+
+// Content
+// - Cards
+import feature01 from '../../../assets/cards/feature-01.svg'
+import feature02 from '../../../assets/cards/feature-02.svg'
+import feature03 from '../../../assets/cards/feature-03.svg'
+import feature04 from '../../../assets/cards/feature-04.svg'
+import feature05 from '../../../assets/cards/feature-05.svg'
+
+import digitalizacionDesktop from '../../../assets/highlights/digitalizacion_desktop.png'
+import probelmsWrapper from '../../../assets/highlights/problems-wrapper-1.png'
+import solutionsWrapper from '../../../assets/highlights/solutions-wrapper-1.png'
+import Button from '../../ui/Button.astro'
+---
+
+<Section id="guardaSection">
+	<Row>
+		<Col span="7" align="left" classes="mb-12 max-w-4xl mx-auto">
+			<h2 class="text-pretty"><strong>Guarda y custodia documental</strong></h2>
+			<p class="pb-0 text-lg">
+				Custodia tus documentos con máxima seguridad y acceso rápido garantizado. Optimizamos el almacenamiento y organización de documentos digitales, asegurando accesibilidad inmediata, trazabilidad y cumplimiento normativo.
+			</p>
+			<Button size='lg'>Contacta con un asesor</Button>
+		</Col>
+	</Row>
+	<Row>
+		<!-- <Col span="12" classes="mb-12 max-w-6xl mx-auto">
+			<img src={digitalizacionDesktop.src} alt="Digitalización de documentos" class="w-auto h-auto mb-8" loading="lazy" />
+		</Col> -->
+        <Col span="6" classes="flex flex-col gap-6 mx-auto text-center">
+			<div class="mb-12 max-w-xl mx-auto text-center">
+				<h5 class="font-bold">La gestión documental genera los siguientes desafíos.</h5>
+				<img src={probelmsWrapper.src} alt="Problemas DocSolutions" class="w-auto h-auto mb-8" loading="lazy" />
+			</div>
+		</Col>
+        <Col span="6" classes="flex flex-col gap-6 mx-auto">
+			<div class="mb-12 max-w-xl mx-auto text-center">
+				<h5 class="text-primary-500 font-bold">Transformamos tus desafíos en oportunidades.</h5>
+				<img src={solutionsWrapper.src} alt="Soluciones DocSolutions" class="w-auto h-auto mb-8" loading="lazy" />
+			</div>
+		</Col>
+	</Row>
+</Section>

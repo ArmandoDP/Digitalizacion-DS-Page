@@ -6,12 +6,16 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/blocks/hero/HomeCTA.astro'
 import Features from '../components/blocks/features/FeatureCards.astro'
 import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
+import GuardaSection from '../components/blocks/guardaSection/guardaSec.astro'
+import BulletsSection from '../components/blocks/bulletsSection/BulletSection.astro'
+import ContactSection from '../components/blocks/contactSection/ContactBlock.astro'
+
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 
 // Content
 // - Testimonial background
-import testimonialBackground from '../assets/testimonial-bg-01.webp'
+//import testimonialBackground from '../assets/testimonial-bg-01.webp'
 // - SEO
 const SEO = {
 	title: 'Foxi | Your Productivity Toolkit',
@@ -23,7 +27,10 @@ const SEO = {
 <Layout title={SEO.title} description={SEO.description}>
 	<Hero />
 	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
+	<Testimonial/>
+	<GuardaSection />
+	<BulletsSection />
+	<ContactSection />
 	<HighlightBlocks />
 	<CTA />
 </Layout>

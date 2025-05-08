@@ -16,10 +16,10 @@
 // Props
 type Props = {
 	type?: 'link' | 'button' | 'submit' | 'reset'
-	size?: 'lg' | 'base' | 'sm'
+	size?: 'lg' | 'base' | 'sm' | 'xl'
 	link?: string
 	modal?: string
-	style?: 'primary' | 'secondary' | 'neutral'
+	style?: 'primary' | 'secondary' | 'third' |'neutral'
 	variation?: 'outline' | 'link'
 	elevated?: boolean
 	classes?: string
@@ -73,8 +73,12 @@ const {
 		@apply inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded font-bold tracking-wide transition duration-300 focus-visible:outline-none disabled:cursor-not-allowed disabled:shadow-none;
 	}
 
+	.button--xl {
+		@apply h-20 px-16 text-lg font-medium [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md;
+	}
+
 	.button--lg {
-		@apply h-12 px-6 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md;
+		@apply h-12 px-8 text-sm [&.button--elevated]:shadow-lg [&.button--elevated]:hover:shadow-md [&.button--elevated]:focus:shadow-md;
 	}
 
 	.button--base {
@@ -91,11 +95,15 @@ const {
 		@apply inline-flex items-center justify-start gap-2 px-0 font-normal;
 	}
 	.button--primary {
-		@apply bg-primary-500 text-white hover:bg-primary-700 focus:bg-primary-700 disabled:border-primary-300 disabled:bg-primary-300 [&.button--elevated]:shadow-lg [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30 [&.button--link]:bg-transparent [&.button--link]:text-primary-500 hover:[&.button--link]:text-primary-600 focus:[&.button--link]:text-primary-600 [&.button--outline]:border-primary-500 [&.button--outline]:bg-transparent [&.button--outline]:text-primary-500 [&.button--outline]:hover:border-primary-600 [&.button--outline]:hover:text-primary-600;
+		@apply rounded-full border-primary-500 bg-primary-500 border-2 text-white hover:bg-transparent hover:text-primary-500 hover:border-primary-500 hover:border-2 focus:bg-primary-500 [&.button--elevated]:shadow-lg [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30 [&.button--link]:bg-transparent [&.button--link]:text-primary-500 hover:[&.button--link]:text-primary-600 focus:[&.button--link]:text-primary-600 [&.button--outline]:border-primary-500 [&.button--outline]:bg-transparent [&.button--outline]:text-primary-500 [&.button--outline]:hover:border-primary-600 [&.button--outline]:hover:text-primary-600;
 	}
 
 	.button--secondary {
-		@apply bg-primary-50 text-primary-500 hover:bg-primary-100 hover:text-primary-600 focus:bg-primary-200 focus:text-primary-700 disabled:border-primary-300 disabled:bg-primary-100 disabled:text-primary-400 [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30 [&.button--link]:bg-transparent [&.button--link]:text-primary-500 hover:[&.button--link]:text-primary-600 focus:[&.button--link]:text-primary-600 [&.button--link_svg]:stroke-primary-500 [&.button--outline]:border-primary-500 [&.button--outline]:bg-transparent [&.button--outline]:text-primary-500 [&.button--outline]:hover:border-primary-600 [&.button--outline]:hover:text-primary-600 [&_svg]:stroke-primary-500;
+		@apply rounded-full px-10 bg-transparent border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white focus:bg-transparent focus:text-primary-700 disabled:border-primary-300 disabled:bg-primary-100 disabled:text-primary-400 [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30 [&.button--link]:bg-transparent [&.button--link]:text-primary-500 hover:[&.button--link]:text-primary-600 focus:[&.button--link]:text-primary-600 [&.button--link_svg]:stroke-primary-500 [&.button--outline]:border-primary-500 [&.button--outline]:bg-transparent [&.button--outline]:text-primary-500 [&.button--outline]:hover:border-primary-600 [&.button--outline]:hover:text-primary-600 [&_svg]:stroke-primary-500;
+	}
+
+	.button--third {
+		@apply rounded-full border-white bg-white border-2 text-primary-500 hover:bg-primary-500 hover:text-white hover:border-primary-500 hover:border-2 focus:bg-primary-500 [&.button--elevated]:shadow-lg [&.button--elevated]:shadow-primary-500/30 [&.button--elevated]:hover:shadow-primary-500/30 [&.button--elevated]:focus:shadow-primary-500/30 [&.button--link]:bg-transparent [&.button--link]:text-primary-500 hover:[&.button--link]:text-primary-600 focus:[&.button--link]:text-primary-600 [&.button--outline]:border-primary-500 [&.button--outline]:bg-transparent [&.button--outline]:text-primary-500 [&.button--outline]:hover:border-primary-600 [&.button--outline]:hover:text-primary-600;
 	}
 
 	.button--neutral {
