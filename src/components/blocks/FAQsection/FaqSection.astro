@@ -1,0 +1,51 @@
+---
+// Feature Cards grid Section
+// ------------
+// Description: A grid of cards with feature information in a 4 column layout.
+
+// Components
+// - Layout
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
+// - UI
+import Hero from '../../../components/blocks/hero/PageHeader.astro'
+import FAQ from '../../../components/blocks/FAQ/FaqSticky.astro'
+
+// Data
+import faqData from '../../../data/json-files/faqData.json'
+// - FAQ Categories
+const faqPricing = faqData.filter((faq) => faq.category === 'FAQS')
+
+// - SEO
+const SEO = {
+	title: 'DocSolutions | Digitalización, gestión documental y automatización',
+	description:
+		'Descubre cómo DocSolutions transforma la gestión documental a través de la digitalización, automatización de procesos y soluciones tecnológicas a medida. Optimiza tu flujo de trabajo y asegura el cumplimiento normativo con nosotros.'
+}
+
+// import Card from '../../ui/cards/FeatureCard.astro'
+import Accordion from '../../ui/Accordion.astro'
+import Card from '../../ui/cards/partials/Card.astro'
+---
+
+<Section id="FAQs">
+	<Row>
+		<Col span="6" classes="max-w-4xl mx-auto">
+			<h2 class="text-pretty">Preguntas frecuentes</h2>
+			<p class="pb-0 text-xl">
+				Queremos facilitar tu camino en respuestas claras y concisas a algunas de las preguntas más comunes que podrías tener.
+			</p>
+		</Col>
+	</Row>
+	<Row>
+		<!-- <Col span="12" classes="mb-12 max-w-6xl mx-auto">
+			<img src={digitalizacionDesktop.src} alt="Digitalización de documentos" class="w-auto h-auto mb-8" loading="lazy" />
+		</Col> -->
+		<Col span='12'>
+			<FAQ
+				data={faqPricing}
+			/>
+		</Col>
+	</Row>
+</Section>

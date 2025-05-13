@@ -13,9 +13,10 @@ type Props = {
   classes?: string
   id?: string
   name?: string
+  action?: string // <--- AGREGADO
 }
 
-const { method = 'post', classes, id, name } = Astro.props
+const { method = 'post', classes, id, name, action } = Astro.props
 
 // Use id as name if name is not set but id is set
 const formName = name || id || undefined;

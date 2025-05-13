@@ -1,0 +1,51 @@
+---
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+import Col from '../../ui/Col.astro'
+
+// Content
+import SoluSign from '../../../assets/highlights/SoluSign-3.png'
+import BackOffice from '../../../assets/highlights/BackOffice.png'
+import DigOnb from '../../../assets/highlights/DigitalOnboarding.png'
+import Binaria from '../../../assets/highlights/logo-binaria-id-purple.png'
+import Button from '../../ui/Button.astro'
+---
+<Col span="3" classes="flex flex-col items-center justify-between h-full text-center border-2 border-black rounded-3xl p-12">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={SoluSign.src} alt="SoluSign" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<p class="text-md text-neutral-800">
+		Automatiza la gestión de tus documentos y fírmalo electrónicamente con la plataforma más flexible y confiable del mercado.
+	</p>
+	<Button style='secondary' size='lg'>Conoce más</Button>
+</Col>
+
+<Col span="3" classes="flex flex-col items-center justify-between h-full text-center border-2 border-black rounded-3xl p-12">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={BackOffice.src} alt="BackOffice" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<p class="text-md text-neutral-800">
+		Reduce costos y riesgos, enfócate 100% en las actividades clave de tu negocio, delega tareas repetitivas, revisiones y cargas administrativas.
+	</p>
+	<Button style='secondary' size='lg'>Conoce más</Button>
+</Col>
+
+<Col span="3" classes="flex flex-col items-center justify-between h-full text-center border-2 border-black rounded-3xl p-10">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={DigOnb.src} alt="Digital Onboarding" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<p class="text-md text-neutral-800">
+		Optimiza el enrolamiento de tus usuarios con Digital Onboarding®. Solicita una demostración personalizada y descubre cómo mejorar su experiencia. ¡Contáctanos!
+	</p>
+	<Button style='secondary' size='lg'>Conoce más</Button>
+</Col>
+
+<Col span="3" classes="flex flex-col items-center justify-between h-full text-center border-2 border-black rounded-3xl p-10">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={Binaria.src} alt="Binaria ID" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<p class="text-base text-neutral-800">
+		Plataforma centrada en el usuario para gestionar credenciales y certificados digitales verificables, portables, privados y a prueba de manipulaciones.
+	</p>
+	<Button style='secondary' size='lg'>Conoce más</Button>
+</Col>

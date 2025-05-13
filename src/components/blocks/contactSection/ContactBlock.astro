@@ -1,14 +1,16 @@
 ---
 // Components
 // - Layout
-import Layout from '../../../layouts/Layout.astro'
+import Section from '../../ui/Section.astro'
+import Row from '../../ui/Row.astro'
+import Col from '../../ui/Col.astro'
 // - UI
-import FormHero from '../../../components/blocks/hero/ContactHero.astro'
+import Form from '../contact/BasicForm.astro'
 import CTA from '../../../components/blocks/CTA/BasicDark.astro'
 import ContactCards from '../../../components/blocks/contact/ContactCards.astro'
 import SocialProof from '../../../components/blocks/socialproof/Basic.astro'
-import Section from '../../ui/Section.astro'
-
+import Check from '../../../assets/highlights/check.png'
+import ReactCarousel from '../../CarouselSlider'
 // Content
 // - SEO
 const SEO = {
@@ -23,11 +25,43 @@ const header = {
 }
 ---
 
-<Section id="guardaSection">
-    <FormHero
-        title={header.title}
-        text={header.text}
-        id="contact"
-        classes="bg-neutral-50 dark:bg-neutral-950/80"
-    />
+<Section id="ContactoDoc">
+    <Row>
+        <Col span="6" classes={`self-center`}>
+            <header class="max-w-xl">
+                <h2 set:html={header.title} />
+                <p class="text-lg leading-relaxed">{header.text}</p>
+
+                <div class="grid grid-cols-1 gap-8">
+                    <div class="flex items-start gap-4">
+                        <img src={Check.src} alt="Check 1" class="w-7 h-7 rounded-full shrink-0" />
+                        <div>
+                            <p class="text-sm">Solicita una demostración personalizada de nuestro producto y explora cómo puede transformar tu negocio.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src={Check.src} alt="Check 1" class="w-7 h-7 rounded-full shrink-0" />
+                        <div>
+                            <p class="text-sm">Descubre nuevos casos de uso adaptados a tu sector y empresa para maximizar el potencial de nuestra solución.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <img src={Check.src} alt="Check 1" class="w-7 h-7 rounded-full shrink-0" />
+                        <div>
+                            <p class="text-sm">Obtén información detallada sobre nuestros planes y precios para tomar la mejor decisión para tu empresa.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div>
+                            <h5>Ellos ya confían en nosotros:</h5>
+                            <ReactCarousel client:load />
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </Col>
+        <Col span="6" classes="relative">
+            <Form classes="max-w-xl" />
+        </Col>
+    </Row>
 </Section>

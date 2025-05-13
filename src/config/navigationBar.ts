@@ -20,7 +20,7 @@ export interface NavItem {
 
 export interface NavAction {
 	name: string
-	link: string
+	link?: string
 	style: string
 	size: string
 }

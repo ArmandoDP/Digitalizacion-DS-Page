@@ -25,29 +25,29 @@ const { classes } = Astro.props
 
 <Card classes={classes}>
 	<CardBody classes="border-2 border-black rounded-3xl">
-		<Form>
+		<Form action="https://formsubmit.co/armando.vargas@docsolutions.com" method="post">
 			<FormField>
-				<label for="name" class="text-sm font-semibold">Nombre completo *</label>
-				<InputField type="text" id="firstName" label="Nombre" required value=""/>
-				<!-- <InputField type="text" id="lastName" label="Last Name" /> -->
+				<label for="firstName" class="text-sm font-semibold">Nombre completo *</label>
+				<InputField type="text" id="firstName" name="name" label="Nombre" required value="" />
 			</FormField>
 			<FormField>
-				<label for="name" class="text-sm font-semibold">Teléfono *</label>
-				<InputField type="tel" id="phone" label="Número de telefono" required value=""/>
+				<label for="phone" class="text-sm font-semibold">Teléfono *</label>
+				<InputField type="tel" id="phone" name="phone" label="Número de teléfono" required value="" />
 			</FormField>
 			<FormField>
-				<label for="name" class="text-sm font-semibold">Dirección de correo corporativo *</label>
-				<InputField type="email" id="email" label="Email" required value="" />
+				<label for="email" class="text-sm font-semibold">Dirección de correo corporativo *</label>
+				<InputField type="email" id="email" name="email" label="Email" required value="" />
 			</FormField>
 			<FormField>
-				<label for="name" class="text-sm font-semibold">Nombre de empresa *</label>
-				<InputField type="text" id="company" label="Nombre de la Empresa" required value=""/>
+				<label for="company" class="text-sm font-semibold">Nombre de empresa *</label>
+				<InputField type="text" id="company" name="company" label="Empresa" required value="" />
 			</FormField>
 			<FormField>
-				<label for="name" class="text-sm font-semibold">Conozcámonos, describe tu situación actual</label>
+				<label for="message" class="text-sm font-semibold">Conozcámonos, describe tu situación actual</label>
 				<TextArea id="message" label="Tu Mensaje" />
 			</FormField>
 			<Button style="primary" type="submit">Contáctenme</Button>
 		</Form>
+
 	</CardBody>
 </Card>

@@ -1,0 +1,71 @@
+---
+// - UI
+import Card from '../../ui/cards/FeatureCard.astro'
+import Col from '../../ui/Col.astro'
+
+// Content
+import FirmaDigital from '../../../assets/highlights/firma-digital-icon.png'
+import FaceScan from '../../../assets/highlights/face-sacan-icon.png'
+import Computer from '../../../assets/highlights/computer-icon.png'
+import DigitalID from '../../../assets/highlights/digital-id-icon_glass.png'
+import Automatizacion from '../../../assets/highlights/automatizacion-digitalizacion-icon.png'
+import IAicon from '../../../assets/highlights/ia-icon-glass.png'
+---
+<Col span="1"></Col>
+
+<Col span="2" classes="flex flex-col items-center justify-between h-full text-center border border-white/15 rounded-3xl py-4 px-2 bg-gradient-to-b from-[#36373B] to-[#9697A21A]">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={Automatizacion.src} alt="Automatizacion y Digitalizacion de procesos" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<p class="text-md text-white font-bold">
+		Automatización y Digitalización de procesos
+	</p>
+</Col>
+
+<Col span="2" classes="flex flex-col items-center justify-between h-full text-center border border-white/15 rounded-3xl py-4 px-2 bg-gradient-to-b from-[#36373B] to-[#9697A21A]">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={FaceScan.src} alt="Digital Onboarding" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<div class="flex items-center justify-center mb-6">
+		<p class="text-md text-white font-bold">
+			Digital Onboarding
+		</p>
+	</div>
+</Col>
+
+<Col span="2" classes="flex flex-col items-center justify-between h-full text-center border border-white/15 rounded-3xl py-4 px-2 bg-gradient-to-b from-[#36373B] to-[#9697A21A]">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={FirmaDigital.src} alt="Firma Digital + IA" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<div class="flex items-center justify-center">
+		<p class="text-md text-white font-bold">
+			Firma digital +
+		</p>
+		<img src={IAicon.src} alt="IA" class="w-12 h-10 ml-2 mb-4" loading="lazy" />
+	</div>
+</Col>
+
+<Col span="2" classes="flex flex-col items-center justify-between h-full text-center border border-white/15 rounded-3xl py-4 px-2 bg-gradient-to-b from-[#36373B] to-[#9697A21A]">
+	<div class="h-28 flex items-center justify-center mt-4">
+		<img src={Computer.src} alt="Gestion Documental + IA" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<div class="flex items-center justify-center">
+		<p class="text-md text-white font-bold">
+			Gestión Documental +
+		</p>
+		<img src={IAicon.src} alt="IA" class="w-12 h-10 mr-2 mb-4" loading="lazy" />
+	</div>
+</Col>
+
+<Col span="2" classes="flex flex-col items-center justify-between h-full text-center border border-white/15 rounded-3xl py-4 px-2 bg-gradient-to-b from-[#36373B] to-[#9697A21A]">
+	<div class="h-28 flex items-center justify-center mb-4">
+		<img src={DigitalID.src} alt="Identidad Digital" class="max-h-full max-w-full object-contain" loading="lazy" />
+	</div>
+	<div class="flex items-center justify-center mb-6">
+		<p class="text-md text-white font-bold">
+			Identidad Digital
+		</p>
+	</div>
+</Col>
+
+<Col span="1"></Col>

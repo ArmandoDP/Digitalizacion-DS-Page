@@ -25,6 +25,7 @@ type Props = {
 	id: string
 	type?: 'text' | 'email' | 'password' | 'tel'
 	label: string
+	name?: string
 	iconName?: string
 	iconPosition?: 'lead' | 'trail'
 	helperText?: string
@@ -37,6 +38,7 @@ const {
 	type = 'text',
 	id,
 	label,
+	name,
 	iconName,
 	iconPosition,
 	helperText,

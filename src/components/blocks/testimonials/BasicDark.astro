@@ -10,6 +10,7 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
 import Testimonial from '../../ui/Testimonial.astro'
+import FeauresDocFlowOne from '../../blocks/featuresDocFlowOne/FeaturesDocFlowONE.astro'
 
 // Props
 type Props = {
@@ -28,13 +29,15 @@ const {
 } = Astro.props
 
 import mockupSoftware from '../../../assets/highlights/mockUps-software-doc.png'
+import DocFlowOne from '../../../assets/highlights/DF_one_white.png'
 import bgShape from '../../../assets/circles-bg.png'
 import Button from '../../ui/Button.astro'
 ---
 
 <Section id="testimonials" classes="bg-gradient-to-t from-gray-950 via-gray-800 to-gray-900">
 	<Row>
-		<Col span="7" align="left" classes="mb-12 max-w-4xl mx-auto">
+		<Col span="9" align="left" classes="mb-12 max-w-4xl mx-auto">
+			<img src={DocFlowOne.src} alt="Digitalización de documentos" class="w-52 mb-8" loading="lazy" />
 			<h2 class="text-pretty text-white">Automatización de procesos y gestión
 				avanzada de documentos</h2>
 			<p class="pb-0 text-lg text-white/85">
@@ -44,7 +47,10 @@ import Button from '../../ui/Button.astro'
 		</Col>
 	</Row>
 	<Row>
-		<Col span="12" classes="relative max-w-5xl mx-auto">
+		<FeauresDocFlowOne />
+	</Row>
+	<Row>
+		<Col span="12" classes="relative max-w-5xl mx-auto mt-12 lg:max-w-4xl">
 			<div class="absolute inset-0 bg-[url('/src/assets/circles-bg.png')] bg-no-repeat bg-contain bg-center opacity-30 z-0"></div>
 			<div class="relative z-10">
 				<img src={mockupSoftware.src} alt="Digitalización de documentos" class="w-auto h-auto mb-8" loading="lazy" />
